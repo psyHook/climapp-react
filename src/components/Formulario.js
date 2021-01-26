@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 
-const Formulario = () => {
+const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
   // State del formulario
-  const [busqueda, setBusqueda] = useState({
-    ciudad: "",
-    pais: "",
-  });
+  
   const [error, setError] = useState(false);
 
   // Extraer ciudad y pais
@@ -29,8 +26,11 @@ const Formulario = () => {
       return;
     }
 
-    // Pasarlo al componente principal
     setError(false);
+    
+    // Pasarlo al componente principal
+    setConsultar(true);
+    
   };
 
   return (
